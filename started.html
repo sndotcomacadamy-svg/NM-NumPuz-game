@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NM NumPuz (Open)</title>
+  <link rel="icon" href="c:\Users\damay\Downloads\Untitled.png" type="image/png">
+  <style>
+      .btn2 {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .btn2:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+ .btn {
+    display: inline-block;
+    background: #4ae277;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.2s;
+  }
+  .btn:hover {
+    background: #357ab8;
+  }
+    .container {
+  width: 100%;
+  padding: 10px;
+}
+/* Small phones */
+@media (max-width: 480px) {
+  .bigTitle {
+    font-size: 28px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .bigTitle {
+    font-size: 36px;
+  }
+}
+
+/* Laptops / Desktop */
+@media (min-width: 1024px) {
+  .bigTitle {
+    font-size: 48px;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+img {
+  width:20%;
+  height: auto;
+}
+ body {
+    margin: 0;
+    font-family: Arial;
+  }
+
+  .bigTitle {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 48px;
+  }
+
+  @media (max-width: 768px) {
+    .bigTitle {
+      font-size: 36px;
+      margin-top: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bigTitle {
+      font-size: 28px;
+      margin-top: 40px;
+    }
+  }
+ .container {
+  position: relative;
+  height: 100vh;
+}
+p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+  
+  
+ .bigTitle {
+    font-size: 30px;       /* ලොකු size */
+    font-weight: bold;     /* බෝල්ඩ් */
+    text-align: center;    /* මැදට align */
+    margin-top: 100px;     /* පිටුවේ උඩින් ගොඩක් gap */
+    margin-bottom: 40px;   /* Title එකට පහලින් gap */
+  }
+  .container {
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center;     /* Vertical center */
+    height: 100vh;           /* Viewport height */
+    background-color: #00d9ff;
+  }
+
+    .tile {
+      background: linear-gradient(135deg, #0078d7, #00b4d8);
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      cursor: grab;
+      transition: transform 0.2s, background 0.3s;
+      user-select: none;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0078d7, #00b4d8);
+      height: 100vh;
+      display: flex;
+       color: rgb(0, 0, 0);
+      margin: 0;
+    }
+
+    
+    .buttons {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      background: #00b4d8;
+      color: rgb(0, 0, 0);
+    }
+
+    button:hover {
+      background: #0090a8;
+    }
+    /* ===== Reset ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; font-family: "Poppins", sans-serif; overflow: hidden; }
+
+    /* ===== Splash Screen ===== */
+    .splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      color: rgb(5, 5, 5);
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1s ease-out;
+      animation: bgPulse 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgPulse {
+      0% { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
+      50% { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
+      100% { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
+    }
+
+    .splash.hide { opacity: 0; pointer-events: none; }
+
+    .splash img {
+      width: 160px;
+      margin-bottom: 20px;
+      animation: logoBounce 1s ease-in-out;
+    }
+
+    @keyframes logoBounce {
+      0% { transform: scale(0); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .splash h1 {
+      font-size: 3em;
+      margin-bottom: 30px;
+      animation: fadeInText 1.5s ease-in-out;
+    }
+
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .splash button {
+      padding: 14px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #FFD700;
+      color: #000;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .splash button:hover {
+      background: #FFC107;
+      transform: translateY(-3px);
+    }
+
+    /* ===== Main Content ===== */
+    .content { display: none; }
+    .content.active { display: block; }
+
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 15px 0;
+      display: flex; justify-content: center; gap: 25px;
+      z-index: 1000;
+    }
+    nav a {
+      color: white; text-decoration: none;
+      font-weight: 600; transition: color 0.3s;
+    }
+    nav a:hover { color: #FFD700; }
+  </style>
+  .btn2 {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .btn2:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+</head>
+<body>
+
+  <!-- Splash / Started Page -->
+  <div class="splash" id="splash">
+    <img src="c:\Users\damay\Downloads\logo.png" alt="Logo">
+    <h1>NM NumPuz</h1>
+    <a href="g:\projects nadula\web\pn 1\1numpuz.html" class="btn">Start Game</a>
+
+  </div>
+
+
+
+
+
+
+
+  <script>
+    import 'package:flutter/material.dart';
+import React from 'react';
+    const splash = document.getElementById('splash');
+    const startBtn = document.getElementById('startBtn');
+    const mainContent = document.getElementById('mainContent');
+
+    startBtn.addEventListener('click', () => {
+      splash.classList.add('hide'); // Fade out
+      setTimeout(() => {
+        splash.style.display = 'none'; // Hide splash
+        mainContent.classList.add('active'); // Show main content
+      }, 1000);
+    });
+ </script>
+
+</body>
+</html>
